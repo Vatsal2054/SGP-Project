@@ -42,15 +42,14 @@ a:link {
 
 #header{
     margin: 0px;
-    /* background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%); */
-    background-image: url("Resources/mesh-gradient.png");
+    background-image: url("Resources/mesh-gradient (5).png");
+    background-color: #575b53;
     background-size: cover;
     width:100%;
     height:400px;
 }
 
 .header_nav .nav_items{
-    /* background-color: #deefce; */
     font-size: 13px;
     display: block;
     width: 100px;
@@ -64,7 +63,7 @@ a:link {
 }
 
 .nav_items p{
-    color: aliceblue;
+    color: whitesmoke;
     text-align: center;
     vertical-align: middle;
     margin-top: 25px;
@@ -105,30 +104,38 @@ a:link {
     border: #464943 solid 5px;
     border-radius: 10px;
     /* border: 5px solid rgb(51, 49, 49); */
-    background-color: rgb(255, 255, 255);
 }
 
-.inbox{
-    margin: 0px 25px;
-    height: 300px;
-    width: 280px;
-    display: flex;
-    justify-content: center;
+.box h2 {
+    margin-top: 110%;
+    color: aliceblue
+}
+
+.box1{
+    background: linear-gradient(to top, rgb(97, 97, 97) 0%, rgba(255, 255, 255, 0) 40%), 
+    url("Resources/videoedit1.jpg");
     background-size: cover;
 }
-#inbox1{
-    background-image: url('image/videoedit1.jpg');
+
+.box2{
+    background: linear-gradient(to top, rgb(97, 97, 97) 0%, rgba(255, 255, 255, 0) 40%), 
+    url("Resources/logod.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
-#inbox2{
-    background-image: url('image/logod.png');
-}
-#inbox3{
-    background-image: url('image/music\ \(1\).jpg');
-}
-#inbox4{
-    background-image: url('image/Copywriting.png');
+.box3{
+    background: linear-gradient(to top, rgb(97, 97, 97) 0%, rgba(255, 255, 255, 0) 40%), 
+    url("Resources/music_3845777.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
+.box4{
+    background: linear-gradient(to top, rgb(97, 97, 97) 0%, rgba(255, 255, 255, 0) 40%), 
+    url("Resources/Copywriting.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 
 
 /* #main_div #cell{
@@ -144,9 +151,9 @@ a:link {
     padding: 30px;
 }
 .intro_text{
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
-    color: ;
+    color: #131412;
 }
 
 .cat{
