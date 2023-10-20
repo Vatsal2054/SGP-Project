@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Finder</title>
+    <link rel="stylesheet" href="homepage_css.css">
+    <!-- <link rel="stylesheet" href="Contact_us.css"> -->
+    <link rel="stylesheet" href="/Ai Finder/Styles/homepage_css.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <div id="header">
+    <link rel="stylesheet" href="Contact_us.css">
+    <div class="head">
+        <div class="Name_div nav"><p>AI Finder</p></div>
+        <div class="nav_div">
+            <% if(locals.Status === 0){ %>
+            <a class="login login_button" href="/Login">Login</a>
+            <% }if(locals.Status === 1){ %>
+            <a class="login logout" >Logout</a>
+            <% } %>
+            <a class="redirect" href="/contact_us">Contact Us</a>
+            <a class="redirect" href="/about">About</a>
+            <a class="redirect" href="/Homepage">Home</a>
+        </div>
+    </div>
+        <div id="header-bg-inner">
+            <p id="head1"><b><b>Welcome to AI finder</b></b</p>
+        </div>
+        <div class="search-container">
+            <div id="search-form">
+                <input type="text" id="input-box" placeholder="Search..." autocomplete="off">
+                <button title="submit" id="search-submit"><i class='bx bx-search' ></i></button>
+            </div>
+            <div id="search-results" class="result-box">
+                 <!-- Search results will be displayed here -->
+            </div> 
+                <!-- <div class="search-form">
+                    <input type="text" id="input-box" placeholder="Search Anything" >
+                    <button title="submit" id="search-submit"><i class='bx bx-search' ></i></button>
+                </div>
+    
+                <div class="result-box">
+                   
+                   
+                </div> -->
+        </div>
+    </div>
+    
+    <div class="main_body">
+    <div class="intro_main">
+        <div class="intro">
+            <p class="intro_text">A collection of different types of AI tools for every purpose.</p>
+        </div>
+    </div>
+    <div class="cat">
+        <div class="cat_in">
+            <p class="cat_text">Categories</p>
+        </div>
+    </div>
+    
+    <div class="container2">
+    <form action="/Video_Generator"  method="get">
+        <button type="submit" name="Video_Generator" class="box box1">
+            <div><h2>Video Generator</h2></div>   
+        </button>
+    </form>
+
+    <form action="/Logo_Generator" method="get">
+        <button type="submit" name="Logo_Generator" class="box box2">
+            <div><h2>Logo Generator</h2></div>
+        </button>
+    </form>
+    <form action="/Music_Generator" method="get">
+        <button type="submit" name="Music_Generator" class="box box3">
+            <div><h2>Music Generator</h2></div>
+        </button>
+    </form>
+    <form action="/Copy_Writing" method="get">
+        <button type="submit" name="Copy_Writing" class="box box4">
+            <div><h2>Copy Writing</h2></div>
+        </button>
+    </form>
+</div>
+<div class="confirmation">
+    <form action="/Logout" method="get"></form>
+    <div class="confirmation_inner"><p>Are you sure you want to log out?</p><button type="submit" onclick = "checked()" class="tick"><i class='bx bx-check'></i></button></div>
+</div>
+<script src="./autocomplet.js" type="script"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script type="text/javascript">
+    // if(Status == 1){
+    //     $(".login_button").css("display", "none");
+    //     $(".logout").css("display", "block");
+    // }
+    $(".logout").click(function(){
+        console.log("logout");
+        $(".confirmation").css("display", "flex !important");
+    });
+    function checked(){
+        console.log("logout Initiated");
+        $(".confirmation").css("display", "none");
+        console.log("Fetch initiated successfully");
+    };
+    console.log("File accessed by homepage!");
+
+let availableKeywords = [
+    { keyword: "Veed.io", url:"https://www.veed.io/"},
+    { keyword: "Descript", url:"https://www.descript.com/?lmref=Qln6zg&lm_meta=cdescript%20ai-1007753-g"},
+    { keyword: "Synthesia", url:"https://www.synthesia.io/tools/video-maker"},
+    { keyword: "Heygen", url: "https://demo.heygen.com/free-video"},
+    { keyword: "Deepbrain", url:"https://www.deepbrain.io/"},
+];
+
+const resultsBox = document.querySelector(".result-box");
+const inputBox = document.getElementById("input-box");
+
+inputBox.onkeyup = function () {
+    let result = [];
+    let input = inputBox.value;
+    if (input.length) {
+        result = availableKeywords.filter((item) => {
+            return item.keyword.toLowerCase().includes(input.toLowerCase());
+        });
+
+        console.log(result);
+    }
+    display(result);
+
+    if (!result.length) {
+        resultsBox.innerHTML = '';
+    }
+}
+
+function display(result) {
+    const content = result.map((item) => {
+        return `<li onclick="selectInput(this)" data-url="${item.url}">${item.keyword}</li>`;
+    });
+
+    resultsBox.innerHTML = "<ul>" + content.join('') + "</ul>";
+}
+
+function selectInput(list) {
+    const selectedUrl = list.getAttribute("data-url");
+    if (selectedUrl) {
+        // Redirect to the URL associated with the keyword
+        window.location.href = selectedUrl;
+    } else {
+        inputBox.value = list.innerHTML;
+        resultsBox.innerHTML = '';
+    }
+}
+
+</script>
+
+</body>
+
+<footer>
+    <div class="footer_main">
+        <p class="message_1">Thank you for using AI Finder</p>
+    </div>
+</footer>
+
+</html>

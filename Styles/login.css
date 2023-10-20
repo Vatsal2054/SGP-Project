@@ -1,0 +1,225 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Regular', sans-serif;
+}
+@font-face {
+  font-family: "Regular";
+  src: url("ObjectSans/Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "Heavy";
+  src: url("ObjectSans/Heavy.otf") format("opentype");
+}
+
+body {
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Regular";
+  background-color: grey;
+  background-image: url("Resources/backgrounds/mesh-gradient-2.png");
+  /* background-image: url("Resources/mesh-gradient-3b.png"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+#container {
+  width: 420px;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(60px);
+  border-radius: 15px;
+  padding: 40px 50px 40px 50px;
+  color: gray;
+  border: solid 0.2px rgba(255, 255, 255, 0.1);
+  user-select: none;
+}
+
+/* #container h1{
+    color: #fff;
+    font-size: 30px;
+    padding: 10px 0px;
+    text-align: center;
+} */
+
+h1 {
+  font-size: 50px;
+  padding: 0px 0px 50px 0px;
+  text-align: center;
+  color: #fff;
+}
+
+.alert{
+  font-size: 12px;
+  color: red;
+  font-family: 'Regular', sans-serif;
+  margin: 0px 0px 0px 10px;
+}
+
+.invalid input{
+  border: 3px solid #f94829 !important;
+}
+
+.input{
+  margin: 12px 0px;
+}
+
+.input::placeholder {
+  user-select: none;
+}
+
+.input:focus {
+  border: 2px solid #c6dcf0;
+  box-sizing: border-box;
+  -webkit-box-shadow: -2px 10px 117px -9px rgba(47, 47, 47, 0.84);
+  -moz-box-shadow: -2px 10px 117px -9px rgba(47, 47, 47, 0.84);
+  box-shadow: -2px 10px 117px -9px rgb(47, 47, 47);
+}
+
+.login_cont {
+  margin: 40px 0px 20px 0px;
+}
+
+.login_form {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  /* margin: 10px 0px;
+  padding: 10px 0px; */
+}
+
+.login_form input {
+  width: 100%;
+  height: 40px;
+  padding: 20px 25px 20px 20px;
+  border-radius: 25px;
+  outline: none;
+  border: 2px solid white;
+  color: rgb(47, 47, 47);
+}
+
+input:focus::placeholder {
+  color: transparent;
+  transition: ease 0.3s;
+}
+
+.login_form i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* #submit button{
+    width: 100%;
+    height: 40px;
+    font-family: inherit;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+    color: azure;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    outline: none;
+    opacity: 1;
+}
+
+#submit button:hover{
+    background: linear-gradient(90deg, #3a47d5 0%,#00d2ff 100%);
+    opacity: 1;
+    transition: opacity ease .5s;
+} */
+.a {
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  height: 100%;
+}
+
+.dropdown_main {
+  display: flex;
+  justify-content: center;
+}
+
+#dropdown {
+  width: 60%;
+  height: 2.5rem;
+  border: none;
+  border-radius: 25px;
+  padding: 0px 15px 0px 15px;
+  margin: 10px 0px
+}
+
+#dropdown option {
+  width: 100%;
+  height: 2rem;
+}
+
+#submit button {
+  position: relative;
+  width: 100%;
+  min-height: 40px;
+  outline: none;
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  background-image: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+  z-index: 1;
+}
+
+#submit button::before {
+  width: 100%;
+  min-height: 40px;
+  outline: none;
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* background-image: linear-gradient(90deg, #3a47d5 0%,#00d2ff 100%); */
+  background: rgb(54, 149, 255);
+  background: linear-gradient(
+    270deg,
+    rgba(54, 149, 255, 1) 0%,
+    rgba(246, 55, 255, 1) 100%
+  );
+  z-index: -1;
+  transition: opacity 0.5s linear;
+  opacity: 0;
+}
+#submit button:hover::before {
+  opacity: 1;
+}
+
+#submit button:focus {
+  box-shadow: -2px 10px 70px -9px rgb(47, 47, 47);
+}
+
+.no_acc {
+  color: white;
+  margin-top: 35px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.no_acc a:hover {
+  text-decoration: underline;
+}
+.no_acc a {
+  color: white;
+  text-decoration: none;
+}

@@ -1,0 +1,93 @@
+body {
+  font-family: "Regular", sans-serif;
+}
+
+@font-face {
+  font-family: "Regular";
+  src: url("ObjectSans/Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "Heavy";
+  src: url("ObjectSans/Heavy.otf") format("opentype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* unvisited link */
+.redirect:link {
+  text-decoration: none;
+}
+
+/* visited link */
+.redirect:visited {
+  color: white;
+}
+
+/* mouse over link */
+.redirect:hover {
+  color: rgb(56, 56, 56);
+  transition: 0.5s ease;
+}
+
+/* selected link */
+.redirect:active {
+  color: #464943;
+}
+
+.head {
+  background-color: rgb(48, 48, 48);
+  font-size: 12px;
+  color: rgb(247, 251, 255);
+  overflow: hidden;
+  padding: 0px 20px;
+}
+
+.Name_div {
+  font-size: 22px !important;
+  padding: 14px 12px;
+  float: left;
+} 
+
+.nav_div .redirect {
+  font-size: 12px;
+  text-align: center;
+  padding: 20px 20px;
+  float: right;
+  transition: 0.5s ease;
+}
+
+.login_button{
+  display: block;
+}
+.logout{
+  display: block;
+}
+
+.nav_div .login {
+  text-align: center;
+  float: right;
+  padding: 10px 20px;
+  margin: 8.8px 10px;
+  font: inherit;
+  font-size: 12px;
+  background: rgba(225, 225, 225, 0.629);
+  outline: none;
+  border: none;
+  border-radius: 12px;
+  color: rgb(47, 47, 47);
+  font-size: 14px;
+  transition: 300ms ease-in-out;
+  --height_button: 60px;
+  transition: 0.5s ease;
+}
+
+.nav_div .login:hover {
+  color: rgb(180, 180, 180);
+  background: #4e4e4e;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+

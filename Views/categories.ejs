@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Categories.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+<body>
+    <div class="upper">
+        <%- include("header.ejs") %>
+        <h1><%= locals.title %>s</h1>
+    </div>
+    <div class="list">
+        <% for(var i = 0; i < locals.Count; i++){ %>
+            <div class="info_block<%= i %> block">
+                <div class="inner">
+                <div class="image image_name">
+                    <img src="<%= path %><%= (i+1) %>.jpg" alt="" width="100px" height="100px" 
+                    style="
+                    float: left;
+                    background-size: contain;
+                    border-radius: 12.5px;
+                    mix-blend-mode: multiply !important;
+                    filter: contrast(1) !important;" >
+                </div>  
+                <h2 class="name">
+                    <span class="AIname"><%= name[i] %></span>
+                    <br>
+                    <p><%= ratings[i] %>.0
+                    <% for(var j = 0; j < (ratings[i]) ; j++) { %>
+                        <span class="fa fa-star checked"></span>
+                    <% } %>
+                    
+                    <%if((5 - (locals.ratings[i])) >= 0){ for(var k = 0; k < (5 - (ratings[i])) ; k++) { %>
+                        <span class="fa fa-star"></span>
+                    <% }} %>
+                    </p>
+                </h2>
+                <div class="links">
+                    <button type="button" id="visit_link" onclick="location.href='<%= link[i] %>'">Visit!</button>
+                    <div class="copy" id="<%= i %>">
+                        <button onclick="copyText(this.id)" id="<%= link[i] %>"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z"></path>
+                        </svg>Copy Link</button>
+                    </div>
+                </div>
+                <% if(locals.tags){ %>
+                <div class="tags">
+                    <% for(var j = 0; j < tags[i].length ; j++) {%>
+                    <div class="tag_in tag<%= j %>"><%= tags[i][j] %></div>
+                        <% } %>
+                </div>
+                <% }  %>
+                <div class="description">
+                    <p>
+                        <strong style="font-family: 'Heavy'; font-size: 16px; color: #464943;">Description:</strong>
+                        <br>
+                        <%= description[i] %>
+                    </p>
+                </div>
+                </div>
+            </div>
+            <% } %>
+            <div class="confirmation">
+                <div class="confirmation_inner"><p>Link copied</p><button onclick="checked()" class="tick"><i class='bx bx-check'></i></button></div>
+            </div>
+    </div>
+    <script type="text/javascript">
+        statusCheck();
+        function copyText(i){
+            navigator.clipboard.writeText(i);
+            $(".confirmation").css("display", "flex");
+        };
+        function checked(){
+            $(".confirmation").css("display", "none");
+        };
+        function statusCheck(){
+            if(status === 1){
+                $(".login_button").css("display", "none");
+            }
+        };
+    </script>
+</body>
+</html>

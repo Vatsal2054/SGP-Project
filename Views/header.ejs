@@ -1,0 +1,16 @@
+
+    <title><%= locals.title %></title>
+    <link rel="stylesheet" href="Contact_us.css">
+    <div class="head">
+        <div class="Name_div nav"><p>AI Finder</p></div>
+        <div class="nav_div">
+            <% if(locals.status == 0){ %>
+            <a class="login login_button" href="/Login">Login</a>
+            <% }else if(locals.status == 1){ %>
+            <a class="login logout">Logout</a>
+            <% } %>
+            <a class="redirect" href="/contact_us">Contact Us</a>
+            <a class="redirect" href="/about">About</a>
+            <a class="redirect" href="/Homepage">Home</a>
+        </div>
+    </div>

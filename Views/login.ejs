@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login to AI Finder</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="/Ai Finder/Styles/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div id="container">
+        <form method="POST" action="/Homepage">
+            <div class="login_cont">
+                <h1 class="h1_cont">AI Finder</h1>
+
+                <% if(locals.Stats.username === false){ %>
+                <div class="login_form l2 invalid">
+                    <p class="alert">Invalid username</p>
+                <% }else{ %>
+                <div class="login_form l2">
+                <% } %>
+                    <input class="input" type="text" name="name" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+
+                <% if(locals.Stats.username === false){ %>
+                    <div class="login_form l3 invalid">
+                    <p class="alert">Invalid Password</p>
+                <% }else{ %>
+                    <div class="login_form l3">
+                <% } %>
+                    <input class="input" type="password" name="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                
+                </div>
+                <div id="submit">
+                    <button type="submit" class="Submit_b">Login</button>
+                </div>
+                <div class="no_acc">
+                    <span>Don't have an account?</span><a class="register_anchor" href="/Register">Register</a>
+                </div>
+        </form>
+    </div>
+</body>
+</html>
